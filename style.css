@@ -26,6 +26,7 @@ body #content .offer {
       grid-template-columns: 1fr;
   -ms-grid-rows: 35vh 35vh 35vh;
       grid-template-rows: 35vh 35vh 35vh;
+      grid-template-areas: 'invite' 'sub' 'promo';
 }
 
 body #content .offer section {
@@ -44,6 +45,9 @@ body #content .offer section {
 body #content .offer .invite {
   background-color: #fff;
   border-radius: 10px 10px 0 0;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: invite;
 }
 
 body #content .offer .invite h1 {
@@ -66,6 +70,9 @@ body #content .offer .sub {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #2ab2af;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sub;
 }
 
 body #content .offer .sub h1 {
@@ -110,16 +117,19 @@ body #content .offer .sub button {
           box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
 }
 
-body #content .promo {
+body #content .offer .promo {
   background-color: #2cc3c1;
   border-radius: 0 0 10px 10px;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: promo;
 }
 
-body #content .promo h1 {
+body #content .offer .promo h1 {
   color: #fff;
 }
 
-body #content .promo p {
+body #content .offer .promo p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,5 +146,94 @@ body #content .promo p {
 
 footer {
   display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    height: 100vh;
+  }
+  body #content {
+    height: 100vh;
+    width: 45%;
+    margin: 20vh auto;
+  }
+  body #content .offer {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 30vh 30vh;
+        grid-template-rows: 30vh 30vh;
+        grid-template-areas: 'invite invite' 'sub promo';
+    -webkit-filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
+  }
+  body #content .offer section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 40px 40px;
+  }
+  body #content .offer .invite {
+    border-radius: 10px 10px 0 0;
+  }
+  body #content .offer .invite h1 {
+    font-size: 28px;
+    padding-bottom: 30px;
+  }
+  body #content .offer .invite p {
+    color: #98a6bd;
+    font-size: 15px;
+    line-height: 22px;
+    padding-right: 70px;
+  }
+  body #content .offer .invite .guarantee {
+    color: #c0df34;
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+  body #content .offer .sub {
+    border-radius: 0 0 0 10px;
+  }
+  body #content .offer .sub h1 {
+    font-size: 15px;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+  body #content .offer .sub .price {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  body #content .offer .sub .price span {
+    font-size: 26px;
+  }
+  body #content .offer .sub .perDay {
+    color: #e5eff5;
+    font-size: 14px;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  body #content .offer .sub button {
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #c0df34;
+    -webkit-box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  }
+  body #content .offer .promo {
+    border-radius: 0 0 10px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.05);
+            box-shadow: rgba(0, 0, 0, 0.05);
+  }
+  body #content .offer .promo h1 {
+    margin-bottom: 10px;
+  }
+  body #content .offer .promo p {
+    margin-right: 10%;
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

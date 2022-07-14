@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
 }
+    
 
 body{
     min-height: 100vh;
@@ -19,6 +20,9 @@ body{
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 35vh 35vh 35vh;
+            grid-template-areas: 'invite'
+                                'sub'
+                                'promo';
             section{
                 display: flex;
                 flex-direction: column;
@@ -28,6 +32,7 @@ body{
                 .invite{
                     background-color: #fff;
                     border-radius: 10px 10px 0 0;
+                    grid-area: invite;
                     
                     h1{
                         color: hsl(179, 62%, 43%);
@@ -46,6 +51,7 @@ body{
                 .sub{
                     justify-content: flex-start;
                     background-color:  hsl(179, 62%, 43%);
+                    grid-area: sub;
                     h1{
                         color:#fff;
                         flex-basis: 20%;
@@ -77,10 +83,11 @@ body{
                         box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
                     }
                     }
-                }
+        
                 .promo{
                     background-color: hsl(179, 63%, 47%);
                     border-radius: 0 0 10px 10px;
+                    grid-area: promo;
                     h1{
                         color: #fff;
                     }
@@ -94,11 +101,105 @@ body{
                         color:  hsl(204, 43%, 93%);
                     }
                 }
-            
+        
         }
     }
+}
 
 
 footer{
     display: none;
 }
+
+@media screen and (min-width:1440px){
+    body{
+        height: 100vh;
+       #content{
+        height: 100vh;
+        width: 45%;
+        margin: 20vh auto;
+        .offer{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 30vh 30vh;
+            grid-template-areas: 'invite invite'
+                                    'sub promo';
+            filter: drop-shadow(0px 5px 10px  rgba(0,0,0,0.2));
+            
+            
+
+            section{
+                justify-content: center;
+                padding: 40px 40px;
+                
+                
+            }
+            .invite{    
+                    border-radius: 10px 10px 0 0;
+                    h1{
+                        font-size: 28px;
+                        padding-bottom: 30px;
+                    }
+                    p{
+                        color:hsl(218, 22%, 67%);
+                        font-size: 15px;
+                        line-height: 22px;
+                        padding-right: 70px;
+                    }
+                    .guarantee{
+                        color: hsl(71, 73%, 54%);
+                        font-size: 18px;
+                        padding-bottom: 10px;
+                    }
+            }
+            .sub{
+                border-radius: 0 0 0 10px;
+                
+                 h1{
+                        font-size: 15px;
+                        flex-basis: 20%;
+                    }
+                   
+                    .price{
+                          margin-bottom: 5px;
+                          font-size: 12px;
+                        span{
+                           font-size: 26px;
+                          }
+                        }
+                    .perDay{
+                            color:  hsl(204, 43%, 93%);
+                            font-size: 14px;
+                            flex-basis: 30%;
+                    }
+                    button{
+                        flex-basis:35%;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 15px;
+                        color: #fff;
+                        background-color: hsl(71, 73%, 54%);
+                        box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
+                        
+                    }
+            }
+            .promo{
+                border-radius: 0 0 10px 0;
+                box-shadow:  rgba(0,0,0,0.05);
+                h1{
+                    margin-bottom: 10px;
+                }
+                p{
+                        margin-right: 10%;
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+            }
+        }
+       }
+    }
+}
+
+
+
+
+
